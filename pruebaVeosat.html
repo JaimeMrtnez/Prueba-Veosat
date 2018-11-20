@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="description" content="Webpage description goes here" />
+    <meta charset="utf-8">
+    <title>Prueba Veosat Jaime Martínez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Jaime Martínez Mejías">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Datatable CSS-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.14/css/mdb.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript  -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Angularjs -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <!-- Datatable Javascript-->
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.14/js/mdb.min.js"></script>
+    <!-- otro javascript -->
+    <script type="text/javascript" src="ui.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+<div class="col-sm-6 col-sm-offset-3" id="btn-container">
+</div>
+<div class="col-sm-6 col-sm-offset-3" id="form-container">
+
+	<h2>Escoge un rango de fechas</h2>
+    
+	<form action="process.php" method="POST" id="formFecha">
+
+		<div id="fini-group" class="form-group">
+			<label for="fini">Fecha inicial</label>
+			<input type="date" class="form-control" name="fini">
+		</div>
+
+		<div id="ffin-group" class="form-group">
+			<label for="ffin">Fecha final</label>
+			<input type="date" class="form-control" name="ffin">
+		</div>
+		<button type="submit" class="btn btn-success" id="envia">Envía! <span class="fa fa-arrow-right"></span></button>
+
+	</form>
+    
+</div>
+<div class="col-sm-6 col-sm-offset-3" id="table-container" style="display: none">
+    <div ng-app="myApp" ng-controller="customersCtrl">
+        <table id="carPaths" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Día</th>
+                    <th>Horas</th>
+                    <th>Kilómetros</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="x in myData">
+                    <td>{{ x.Day }}</td>
+                    <td>{{ x.Hours }}</td>
+                    <td>{{ x.Distance }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>   
+<div class="col-sm-6 col-sm-offset-3" id="graph-container" style="display: none">
+    <canvas id="lineChart"></canvas>
+</div>
+<script type="text/javascript" src="chart.js"></script>
+</body>
+</html>

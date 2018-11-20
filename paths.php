@@ -1,0 +1,1 @@
+{ "records":[ {"Day":"1","Hours":1,"Distance":100}, {"Day":"2","Hours":2,"Distance":200}, {"Day":"3","Hours":3,"Distance":300}, {"Day":"4","Hours":4,"Distance":400}, {"Day":"5","Hours":5,"Distance":500}, {"Day":"6","Hours":6,"Distance":600}, {"Day":"7","Hours":7,"Distance":700} ] }
